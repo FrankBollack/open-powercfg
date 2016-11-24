@@ -137,7 +137,7 @@ namespace OpenPowerCfg.GUI
 
         public string AcValue
         {
-            get { return isRange ? acValue.ToString() : indexedSettings[ (int)acValue ].name; }
+            get { return isRange ? acValue.ToString() : indexedSettings.Count >= ((int)acValue) ? indexedSettings[(int)acValue].name : "-"; }
             set
             {
                 if (isRange)
@@ -201,7 +201,7 @@ namespace OpenPowerCfg.GUI
 
         public string DcValue
         {
-            get { return isRange ? dcValue.ToString() : indexedSettings[(int)dcValue].name; }
+            get { return isRange ? dcValue.ToString() : indexedSettings.Count >= ((int)dcValue) ? indexedSettings[(int)dcValue].name : "-";  }
             set
             {
                 if (isRange)
